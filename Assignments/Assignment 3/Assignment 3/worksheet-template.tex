@@ -1,0 +1,136 @@
+%------------------------------------------------------------------------------------
+%	EDIT THIS BLOCK AS REQUESTED
+%------------------------------------------------------------------------------------
+\newcommand{\studentone}{[Your name]}			    % change to your name
+\newcommand{\studentonenumber}{[XXXXXXXX]}		    % enter your student number 
+% \newcommand{\studenttwo}{Steve Martin}			% change to your partner's name
+% \newcommand{\studenttwonumber}{654321}			% enter your partner's student number
+\title{Assignment 3}					            % change to the title of the experiment
+% \author{\studentone and \studenttwo}				% you don't have to change this
+\author{\studentone}	
+\date{\today}										% this fills in today's date - don't change
+
+%------------------------------------------------------------------------------------
+%	SCROLL DOWN TO RESULTS AND ANALYSIS
+%     You do not have to change anything in between!
+%------------------------------------------------------------------------------------
+\documentclass[12pt,oneside,oldfontcommands]{memoir}
+
+%-----------------------------------------------------------------------------------
+%	MARGIN AND HEADER/FOOTER SIZES
+%------------------------------------------------------------------------------------
+\setlrmarginsandblock{2.5cm}{2.5cm}{*}  		% left/right margins
+\setulmarginsandblock{2.5cm}{2.5cm}{*} 			% top/bottom margins
+\checkandfixthelayout							% checks the layout is correct
+\setlength{\parindent}{0in}  					% no indent on start of paragraph
+							
+%-------------------------------------------------------------------------------------
+%  PACKAGES
+%-------------------------------------------------------------------------------------
+\usepackage{amsmath,amsthm,amssymb,amsfonts}			% math fonts
+\usepackage[english]{babel}								% hyphenation rules for english
+\usepackage{graphicx}									% for importing pdf files 
+\usepackage{siunitx}									% si units - extremely useful
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}	% defines the dvips color names
+\usepackage{color,soul} 								% for highlight hi - hyphenation, underlining
+\setulcolor{red} 										% set underline color
+\setstcolor{green} 										% set overstriking color
+\sethlcolor{green} 										% set highlighting color
+\usepackage{fullpage,enumitem,amsmath,amssymb,graphicx}
+%--------------------------------------------------------------------------------------------
+%  GRAPHICS PATH
+%--------------------------------------------------------------------------------------------
+\graphicspath{{figures/}}								% put your figures in a folder called figures
+
+%---------------------------------------------------------------------------
+%  SOME NEW FUNCTIONS FOR IMPORTING FIGURES
+%---------------------------------------------------------------------------
+\newcommand{\placefigure}[1]{\centerline{\includegraphics[width=2 in]{#1}}} 
+\newcommand{\placefigureandscale}[2]{\centerline{\includegraphics[width=#2 in]{#1}}} 
+
+%-------------------------------------------------------------------------------------
+%	TITLE PAGE MACRO
+%------------------------------------------------------------------------------------
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}
+  \begin{center}\leavevmode
+       \normalfont
+       \includegraphics[width=0.3\columnwidth]{figures/Sbu-logo.svg.png}
+       \vskip 0.5cm   
+       \textsc{\Large Basics of cryptography (CE057)}\\[0.5 cm]
+	     {\large \@date\par}
+       \vskip 1.0cm
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \bfseries \@title}\\
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+	
+	\begin{minipage}{0.5\textwidth}
+		\begin{flushleft} \large
+			\emph{Name:} \studentone\\
+			Student Number: \studentonenumber
+			\end{flushleft}
+			\end{minipage}~
+			\begin{minipage}{0.4\textwidth}
+			\begin{flushleft} \large
+			% \emph{Partner:} \studenttwo\\
+			% Student Number: \studenttwonumber
+		\end{flushleft}
+	\end{minipage}\\[2 cm]
+   \end{center}
+   \vfill
+   \null
+   \cleardoublepage
+  }
+\makeatother
+
+%-------------------------------------------------------------------------------------------
+%	START OF DOCUMENT
+%--------------------------------------------------------------------------------------------
+\begin{document}
+  \maketitle
+  \begin{center}
+
+  \vspace{-0.3in}
+  \begin{tabular}{rl}
+  % Collaborators: & 
+  \end{tabular}
+  \end{center}
+    \textbf{Due date: 28 April 2023, 23:59 (GMT+3:30)}\\
+    In this assignment you are going to answer questions related to the Data Encryption Standard (DES) and Triple-DES.
+    \begin{itemize}
+        \item By turning in this assignment, I declare that all of this is my own work.
+        \item This is an individual assignment. Please mention your name and student number in
+        submission. You have to hand in a  \textbf{SINGLE} document (PDF) with your answers
+        and your source code (if any).\textbf{ Also, be aware that any form of plagiarism
+        will not be condoned.}
+        \item Your code must be written in C, Java, Python or Golang, although we encourage you to use Python for simplicity.
+        \item Pose your questions on the Telegram group, so that your fellow students can also
+        read them.
+        \item \textbf{Explain and motivate all your answers!}
+    \end{itemize}
+
+  \noindent
+  \rule{\linewidth}{0.4pt}
+%--------------------------------------------------------------------------------------------
+%	Section
+%--------------------------------------------------------------------------------------------
+  \section*{Problems (30 points)}
+
+  \begin{enumerate}[label=(\alph*)]
+    \item What is DES? How does it work? Explain why the number of rounds in DES is 16?
+    \item Explain the differences between a block cipher and a stream cipher?
+    \item Why was DES replaced by AES?
+    \item Is there any way to recover an encrypted message if we don’t know the key or initialization vector used during encryption?
+    \item What’s the difference between DES and 3DES?
+    \item What are the different types of attacks that can be performed on DES?
+    \item What are the two best known general attacks against block ciphers?
+  \end{enumerate}
+
+%--------------------------------------------------------------------------------------------
+%	Section
+%--------------------------------------------------------------------------------------------
+  \section*{Computer Assignment (70 points)}
+    How can you use the Data Encryption Standard (DES) algorithm for image encryption and decryption? Describe the steps involved in encrypting and decrypting an image using DES. Additionally, explain why using ECB mode for DES encryption is not secure, and suggest an alternative mode that provides stronger security? Finally, provide a code snippet in Python (or any) that demonstrates how to encrypt and decrypt an image using 3DES.  
+\end{document}
